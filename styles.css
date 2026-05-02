@@ -1,4 +1,4 @@
-  :root {
+:root {
     --teal: #1AAF7A;
     --teal-dark: #0F7A56;
     --teal-light: #E1F5EE;
@@ -664,7 +664,7 @@
     .about-grid { grid-template-columns: 1fr; gap: 3rem; }
     .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .recognition-grid { grid-template-columns: repeat(3, 1fr); }
+    .recognition-grid { grid-template-columns: repeat(2, 1fr); }
     .footer-main { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 768px) {
@@ -678,7 +678,11 @@
     .team-grid { grid-template-columns: 1fr; }
     .hero-title { font-size: 2.2rem; }
     .section-title { font-size: 1.8rem; }
-    .recognition-grid { grid-template-columns: repeat(2, 1fr); }
+    .recognition-grid { grid-template-columns: 1fr; max-width: 360px; margin-left: auto; margin-right: auto; }
+    .recognition-card { padding: 1.5rem 1.25rem; }
+    .recognition-card h3 { font-size: 1rem; white-space: normal; }
+    .recognition-card p { font-size: 0.85rem; }
+    .recognition-badge { white-space: normal; text-align: center; }
     .footer-main { grid-template-columns: 1fr; gap: 2rem; }
     .footer-bottom { flex-direction: column; align-items: flex-start; }
   }
