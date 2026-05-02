@@ -1,6 +1,16 @@
 {
   "version": 2,
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/$1" }
+  "builds": [
+    { "src": "api/**/*.js", "use": "@vercel/node" },
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "forms.html", "use": "@vercel/static" },
+    { "src": "styles.css", "use": "@vercel/static" },
+    { "src": "script.js", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/submit", "dest": "/api/submit.js" },
+    { "src": "/api/contact", "dest": "/api/contact.js" },
+    { "src": "/forms", "dest": "/forms.html" },
+    { "src": "/", "dest": "/index.html" }
   ]
 }
