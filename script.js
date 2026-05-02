@@ -1,8 +1,3 @@
-
-// ─── API CONFIG ───
-// Vercel serves frontend + API on the same domain, so we use relative paths.
-const API_URL = '/api/contact';
-
 // ─── SCROLL PROGRESS ───
 window.addEventListener('scroll', () => {
   const el = document.getElementById('scrollProgress');
@@ -38,9 +33,9 @@ function showToast(title, sub, icon) {
 }
 
 // ─── SEND TO MONGODB ───
-async function sendToSheet(data) {
+async function sendToMongo(data) {
   try {
-    const response = await fetch(API_URL, {
+    const response = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
@@ -78,7 +73,7 @@ async function submitDemoForm() {
     message: document.getElementById('f_message').value.trim()
   };
 
-  await sendToSheet(data);
+  await sendToMongo(data);
 
   document.getElementById('formBody').style.display = 'none';
   document.getElementById('formSuccess').style.display = 'block';
@@ -109,7 +104,7 @@ async function submitContactForm() {
     message: msg
   };
 
-  await sendToSheet(data);
+  await sendToMongo(data);
 
   document.getElementById('contactFormBody').style.display = 'none';
   document.getElementById('contactFormSuccess').style.display = 'block';
